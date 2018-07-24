@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css?family=Merienda');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+html,
+body,
+#form {
+    height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family: 'Merienda', cursive;
+  color: white;
+  background-color: #1F1E1D;
+
+  user-select: none;
+}
+
+#form {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#status {
+  margin-bottom: -25px;
+  margin-left: -35px;
+
+  color: white;
+  text-shadow: 2px 2px 3px #1F1E1D;
+  font-size: 50px;
+
+  pointer-events: none;
+  z-index: 2;
+}
+
+.button {
+  width: 30%;
+  min-width: 250px;
+  height: 50px;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  text-transform: uppercase;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  border: 3px solid transparent;
+
+  transition: all 1s;
+}
+
+.reserve {
+  color: #A51932;
+  border: 3px solid #A51932;
+}
+
+.reserved {
+  background-color: #A51932;
+  cursor: not-allowed;
+}
+
+.reserved .reserve {
+  opacity: 0.5;
+  color: white;
+  border: 3px solid white;
+  /* cursor: not-allowed; */
+  pointer-events: none;
+}
+
+.reserved .free {
+  opacity: 0.5;
+  color: white;
+  border: 3px solid white;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.free {
+  color: #36A016;
+  border: 3px solid #36A016;
+}
+
+.hidden {
+  display: none !important;
+}

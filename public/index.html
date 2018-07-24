@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Is The Toilet Free?</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <div id="form" class="">
+      <div id="status">Free</div>
+      <div class="button reserve" name="Reserved">Reserve</div>
+      <div class="button free hidden" name="Free">Free</div>
+    </div>
+
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" charset="utf-8"></script>
+
+    <script>
+      $(function () {
+        const socket = io();
+        $('.button').click(event => {
+          const status = $(event.target).attr('name');
+          socket.emit('update', status);
+
+          $('.reserve').toggleClass('hidden');
+          $('.free').toggleClass('hidden');
+
+          $('#status').html(status);
+          return false;
+        });
+
+        socket.on('update', (msg) => {
+          console.log(msg);
+          $('#form').toggleClass('reserved');
+          $('#status').html(msg);
+        });
+
+        setInterval(() => {
+          axios.get(window.location.href);
+        }, 1000*60*20);
+      });
+    </script>
+  </body>
+</html>
