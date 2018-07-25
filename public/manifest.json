@@ -1,0 +1,15 @@
+{
+  "short_name": "Closet",
+  "name": "Closet",
+  "icons": [
+    {
+      "src": "closet-logo.png",
+      "sizes": "512x12",
+      "type": "image/png"
+      }
+    ],
+  "background_color": "#000",
+  "start_url": "/",
+  "display": "fullscreen",
+  "orientation": "portrait"
+}
