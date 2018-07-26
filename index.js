@@ -41,4 +41,4 @@ setInterval(() => {
   request('http://127.0.0.1', (error, response, body) => {
     console.log('self request');
   });
-}, 1000*60*15);
+}, 1000*60*5);
